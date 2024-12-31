@@ -71,7 +71,7 @@ function About({ updateMouseAnim }) {
     return (
         <main>
             <Container>
-                <section className="flex h-screen flex-col items-center justify-center space-y-40 text-center text-black dark:text-white">
+                <section className="flex flex-col items-center justify-center h-screen space-y-40 text-center text-black dark:text-white">
                     <div className="space-y-20">
                         <div
                             {...mouseEvents(updateMouseAnim)}
@@ -99,7 +99,7 @@ function About({ updateMouseAnim }) {
                         className={`flex ${isOpen ? "items-start" : "items-center"} gap-30 text-brown-light dark:text-brown-dark`}
                     >
                         <button className="multiBtn h-[55px] w-[155px] bg-black dark:bg-white">
-                            <Link to="/projects" className="cursor-pointer p-5">
+                            <Link to="/projects" className="p-5 cursor-pointer">
                                 see my work
                             </Link>
                         </button>
@@ -110,7 +110,7 @@ function About({ updateMouseAnim }) {
                             <motion.span
                                 onClick={() => setIsOpen((pre) => !pre)}
                                 {...anim(rotate)}
-                                className="cursor-pointer p-5"
+                                className="p-5 cursor-pointer"
                             >
                                 +
                             </motion.span>
@@ -122,8 +122,8 @@ function About({ updateMouseAnim }) {
                                     >
                                         <motion.a
                                             {...anim(showSMChildren)}
-                                            className="mx-auto inline-block cursor-pointer"
-                                            href="mailto:mounirwebdevcode@gmail.com"
+                                            className="inline-block mx-auto cursor-pointer"
+                                            href="mailto:sanjaychoudhury@gmail.com"
                                             target="_blank"
                                             rel="noreferrer"
                                         >
@@ -134,13 +134,13 @@ function About({ updateMouseAnim }) {
                                                         : "#0D0701"
                                                 }
                                                 type="mail"
-                                                className="size-20 cursor-pointer"
+                                                className="cursor-pointer size-20"
                                             />
                                         </motion.a>
                                         <motion.a
                                             {...anim(showSMChildren)}
-                                            className="mx-auto inline-block cursor-pointer"
-                                            href="https://www.instagram.com/mounir.codes"
+                                            className="inline-block mx-auto cursor-pointer"
+                                            href="https://www.instagram.com/sanjuuu_x18"
                                             target="_blank"
                                             rel="noreferrer"
                                         >
@@ -151,13 +151,13 @@ function About({ updateMouseAnim }) {
                                                         : "#0D0701"
                                                 }
                                                 type="instagram"
-                                                className="size-20 cursor-pointer"
+                                                className="cursor-pointer size-20"
                                             />
                                         </motion.a>
                                         <motion.a
                                             {...anim(showSMChildren)}
-                                            className="mx-auto inline-block cursor-pointer"
-                                            href="https://github.com/mounirabcire"
+                                            className="inline-block mx-auto cursor-pointer"
+                                            href="https://github.com/codecraft-sanju"
                                             target="_blank"
                                             rel="noreferrer"
                                         >
@@ -168,7 +168,7 @@ function About({ updateMouseAnim }) {
                                                         : "#0D0701"
                                                 }
                                                 type="github"
-                                                className="size-20 cursor-pointer"
+                                                className="cursor-pointer size-20"
                                             />
                                         </motion.a>
                                     </motion.div>
@@ -177,7 +177,7 @@ function About({ updateMouseAnim }) {
                         </motion.div>
                     </div>
                 </section>
-                <section className="flex min-h-screen flex-col items-center justify-center space-y-40 text-center text-black dark:text-white">
+                <section className="flex flex-col items-center justify-center min-h-screen space-y-40 text-center text-black dark:text-white">
                     <div className="space-y-20">
                         <div
                             {...mouseEvents(updateMouseAnim)}
@@ -196,7 +196,7 @@ function About({ updateMouseAnim }) {
                             className="space-y-40"
                         >
                             <div className="mx-auto space-y-10 lg:max-w-[848px]">
-                                <h4 className="subHead inline-block capitalize">
+                                <h4 className="inline-block capitalize subHead">
                                     web design
                                 </h4>
 
@@ -215,7 +215,7 @@ function About({ updateMouseAnim }) {
                                 {...mouseEvents(updateMouseAnim)}
                                 className="mx-auto space-y-10 lg:max-w-[848px]"
                             >
-                                <h4 className="subHead inline-block capitalize">
+                                <h4 className="inline-block capitalize subHead">
                                     front-end development
                                 </h4>
 
