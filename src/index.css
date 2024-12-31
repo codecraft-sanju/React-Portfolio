@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Raleway:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        cursor: none;
+    }
+
+    html {
+        font-size: clamp(1em, 0.625vw + 0.8313em, 1.1875em);
+        @apply bg-transparent font-body;
+    }
+
+    body {
+        overflow-x: hidden;
+        @apply bg-transparent font-body;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-title;
+    }
+
+    h1 {
+        font-size: 75px;
+        line-height: 1;
+    }
+
+    h2 {
+        font-size: 50px;
+        line-height: 1;
+    }
+
+    h3 {
+        font-size: 36px;
+        line-height: 1;
+    }
+
+    h4 {
+        font-size: 26px;
+        line-height: 1;
+    }
+
+    small {
+        font-size: 14.1509px;
+        line-height: 1;
+    }
+
+    .tech {
+        @apply relative z-10;
+    }
+
+    .tech::after {
+        content: "";
+        @apply absolute left-0 top-0 -z-10  h-10 w-10 rounded-br-full bg-brown-light dark:bg-brown-dark;
+    }
+
+    /* *********** Header Componenet *********** */
+    .header {
+        height: 100svh;
+    }
+
+    /* *********** Navbar Componenet *********** */
+    .menu {
+        position: relative;
+        width: 50px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid; */
+        z-index: 20;
+    }
+
+    .menu::before {
+        content: "";
+        width: 20px;
+        height: 2px;
+        top: calc(50% + 3px);
+        transform: translateY(-50%);
+        transition: all 0.3s linear 0.3s;
+        @apply absolute block rounded-sm bg-black dark:bg-white;
+    }
+
+    .menu::after {
+        content: "";
+        width: 30px;
+        height: 2px;
+        top: calc(50% - 3px);
+        transform: translateY(-50%);
+        transition: all 0.3s linear 0.3s;
+        @apply absolute block rounded-sm bg-black dark:bg-white;
+    }
+
+    .menu.active::before {
+        content: "";
+        width: 20px;
+        height: 2px;
+        top: calc(50%);
+        transform: rotate(-45deg);
+        transition: all 0.3s linear 0.3s;
+        @apply absolute block rounded-sm bg-white dark:bg-black;
+    }
+
+    .menu.active::after {
+        content: "";
+        width: 20px;
+        height: 2px;
+        top: calc(50%);
+        transform: rotate(45deg);
+        transition: all 0.3s linear 0.3s;
+        @apply absolute block rounded-sm bg-white dark:bg-black;
+    }
+
+    .links {
+        top: 0;
+        right: 0px;
+        @apply absolute flex flex-col items-start justify-center gap-20 overflow-hidden rounded-md bg-black pl-10 text-white dark:bg-white dark:text-black;
+    }
+
+    .links div {
+        @apply relative p-1;
+    }
+
+    .links div:not(.darkMode):after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        transition: all 0.4s;
+        @apply absolute -bottom-5 left-1/2 block -translate-x-1/2 rounded-full bg-white dark:bg-black;
+    }
+
+    .links div:hover::after {
+        width: 100%;
+        pointer-events: none;
+    }
+
+    /* *********** About Component *********** */
+    .multiBtn {
+        @apply relative z-10 cursor-none;
+    }
+
+    .multiBtn::after {
+        content: "";
+        transition:
+            left 0.1s ease,
+            top 0.1s ease;
+        @apply pointer-events-none absolute left-[8px] top-[8px] -z-10 block h-full w-full border-2 border-black dark:border-white;
+    }
+
+    .subHead {
+        position: relative;
+        z-index: 5;
+    }
+
+    .subHead::after {
+        content: "";
+        z-index: -1;
+        @apply absolute bottom-5 left-0 block h-5 w-full bg-brown-light dark:bg-brown-dark;
+    }
+
+    /* Contact Component */
+    .form {
+        @apply flex flex-col items-center justify-center;
+    }
+
+    .inputBox {
+        @apply relative my-10 w-[300px];
+    }
+
+    .inputText {
+        transition: border 0.4s;
+        @apply relative w-full resize-none rounded-none border-b border-black bg-white p-10 outline-none dark:border-white dark:bg-black;
+    }
+
+    .msgArea {
+        @apply h-[200px];
+    }
+
+    .inputBox span {
+        transition: all 0.4s;
+        @apply pointer-events-none absolute left-0 top-0 text-smaller tracking-[5px] xl:text-small;
+    }
+
+    .inputText:focus ~ span,
+    .inputText:valid ~ span {
+        @apply text-smallest -translate-y-15 bg-black px-5 text-white dark:bg-white dark:text-black;
+    }
+
+    .submitBox {
+        @apply inline-block h-[35px] cursor-pointer rounded-sm bg-black px-15 text-white dark:bg-white dark:text-black;
+    }
+}
