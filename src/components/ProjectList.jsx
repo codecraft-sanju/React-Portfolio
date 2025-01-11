@@ -34,7 +34,7 @@ const projects = [
         description:
             "myBanki is a fun project that simulates an online banking platform. It consists of a static webpage providing bank information such as features and pricing, along with a user-friendly dashboard where users can view their balance and perform various actions.",
         github: "https://github.com/codecraft-sanju",
-        live: "https://ninja-sketch-sepia.vercel.app/",
+        live: "https://my-banki-ecru.vercel.app/",
         tech: ["HTML", "CSS", "tailwindcss", "React", "Framer Motion"],
     },
     {
@@ -49,7 +49,7 @@ const projects = [
 
 function ProjectList({ updateMouseAnim }) {
     return (
-        <div className="grid grid-cols-1 gap-4 text-start text-black dark:text-white lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 text-black text-start dark:text-white lg:grid-cols-2">
             {projects.map((project, i) => (
                 <ProjectItem
                     project={project}
